@@ -35,16 +35,17 @@ let country = countries[x]
 console.log("Welcome to a game of Hangman...");
 difficulty = prompt("Do you want it easy, or hard?")
 while (difficulty.toLowerCase() !== "easy" && difficulty.toLocaleLowerCase() !== "hard") {
+    console.clear()
     difficulty = prompt("Do you want it easy, or hard?")
 }
 
 if (difficulty === "easy") {
-    console.clear
+    console.clear()
     life = 10;
     hangmanpics = hangmanpicsEasy
     console.log("Baby wants his bottle??")
 } else {
-    console.clear
+    console.clear()
     life = 5;
     hangmanpics=hangmanpicsHard
     console.log("I see you like pain!")
@@ -59,17 +60,17 @@ for (const element of mystery) {
 }
 
 while (displayed.toString() != mystery.toString()) {
-    console.clear
+    
     let letter = prompt("Please enter a letter.");
 if (letter.toLocaleLowerCase() === "quit") {
-    console.clear
+    console.clear()
     console.log(hangmanpics[hangmanpics.length-1])
     console.log("Too bad, you dieded! :D ")
         process.exit();
 }
 
 else if (wrongLetters.includes(letter.toLocaleLowerCase()) || wrongLetters.includes(letter.toLocaleUpperCase())) {
-    console.clear
+    console.clear()
     console.log("You already tried that.")
 }
 
@@ -77,22 +78,22 @@ else if (!(mystery.toString().toLowerCase().includes(letter.toLocaleLowerCase())
     //console.log(mystery.toString().includes(letter))
     life --
     wrongLetters.push(letter.toLocaleLowerCase())
-    console.clear
+    console.clear()
     console.log(hangmanpics[hangmanpics.length-1-life])
     console.log(`The number of guesses left for you is: ${life}`)
 }
 for (let index = 0; index < mystery.length; index++) {
-    console.clear
+    
     //console.log(`your life is ${life}`)
     const element = mystery[index];
     if (life === 0){
-
+        console.clear()
         console.log(hangmanpics[hangmanpics.length-1])
         console.log("You dieded")
         process.exit();
     }
     else if (element.toLocaleLowerCase() === letter) {
-        console.clear
+        
         console.log (`${element} is a MATCH!`)
         //console.log(true)
         interim[index]=element
@@ -104,10 +105,10 @@ for (let index = 0; index < mystery.length; index++) {
 }
 //console.log(displayed)
 //console.log(mystery)
-console.clear
+
 console.log(...displayed)   
 console.log(`The following incorrect letters you have already used: `, ...wrongLetters)
 
 }
-console.clear
+console.clear()
 console.log("You win!")
