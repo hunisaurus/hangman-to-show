@@ -15,6 +15,7 @@ let interim= [];
 let displayed=[""];
 let wrongLetters = [];
 let life;
+let countCap=""
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -26,11 +27,11 @@ let difficulty="";
 
 if (y=0) {
     x= getRandomInt(countries.length)
+    countCap=countries[x]
 } else {
     x= getRandomInt(capitals.length)
+    countCap=capitals[x]    
 }
-
-let country = countries[x]
 
 console.log("Welcome to a game of Hangman...");
 difficulty = prompt("Do you want it easy, or hard?")
