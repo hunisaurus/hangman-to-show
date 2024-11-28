@@ -71,9 +71,9 @@ while (game === "yes"){
         currentGuess = "";
         while (guess === "" || !isNaN(guess) || !abc.includes(guess)){
             if (level === "easy" && lives < 10){
-                console.log(hangmanpicsEasy[9 - lives]);
+                console.log(hangmanpicsEasy[(hangmanpicsEasy.length - 1) - lives]);
             } else if (level === "hard" && lives < 5){
-                console.log(hangmanpicsHard[4 - lives]);
+                console.log(hangmanpicsHard[(hangmanpicsHard.length - 1) - lives]);
             }
             console.log("Your word is:");
             console.log(unknown);
@@ -126,7 +126,7 @@ while (game === "yes"){
         console.clear();
         console.log(hangmanpicsEasy[hangmanpicsEasy.length-1])
         console.log("YOU LOST!\n");
-        console.log("Your word was: " + original)
+        console.log("Your word was: " + original);
     } else {
         console.clear();
         word = unknown;
